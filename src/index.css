@@ -1,4 +1,6 @@
-html, body, #root {
+html,
+body,
+#root {
   margin: 0;
   min-height: 100%;
   min-height: 100vh;
@@ -7,4 +9,3 @@ html, body, #root {
 body {
   font-family: system-ui, sans-serif;
 }
-

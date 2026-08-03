@@ -1,18 +1,28 @@
-# CLAUDE.md
+# NSTRUCTIONS.md
 
-Guidance for Claude Code when working in this repository.
+Guidance for Copilot when working in this repository.
 
 ## Project Overview
- This project is a personal book tracker and discovery app for logging what the user has read, rating and reviewing titles, and finding your next great read.
+
+A cozy, no-guilt habit tracker for building the little rituals that add up to a better life. Log your daily habits, watch your streaks grow, and get gentle nudges to keep going without the pressure or gamified anxiety of typical habit apps.
 
 ## Tech Stack
 
 - **Language:** JavaScript (ES6+)
-- **Framework:** React 
+- **Framework:** React
 - **Testing:** Jest
-- **Styling:** CSS (mobile-first, breakpoints at 760px / 1024px) 
+- **Styling:** CSS (mobile-first, breakpoints at 760px / 1024px)
 - **Version control:** Git / GitHub
-- **Deployment:** Netlify 
+- **Deployment:** Netlify
+
+## Colors
+
+- Primary: #8B5CF6 (violet)
+- Secondary/Accent: #EC4899 (pink/fuchsia)
+- Background: #FAF5FF (very light lavender)
+- Text: #2D1B4E (deep purple-black, not pure black)
+- Muted text: #6B7280 or a muted purple-gray
+- Success/streak color: could stay purple-pink family too, e.g. #A855F7
 
 ## Commands
 
@@ -62,5 +72,5 @@ src/
 
 ## Notes for Claude
 
-- I'm a junior Frontend developer — explain non-obvious tradeoffs briefly, don't over-explain 
+- I'm a junior Frontend developer — explain non-obvious tradeoffs briefly, don't over-explain
 - Ask before assuming project scope on early-stage/idea-stage projects
