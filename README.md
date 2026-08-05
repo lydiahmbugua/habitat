@@ -33,6 +33,8 @@ Habitat is a calm, minimalist habit tracker designed to help users build consist
 
 ![Dark Mode](./screenshots/darkmode.png)
 
+
+
 ---
 
 ## 🛠️ Tech Stack
