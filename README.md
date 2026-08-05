@@ -23,7 +23,7 @@ Habitat is a calm, minimalist habit tracker designed to help users build consist
 
 ### Landing Page
 
-![Landing Page](./screenshots/landing.png)
+![Landing Page](./screenshots/landing-page.png)
 
 ### Dashboard
 
