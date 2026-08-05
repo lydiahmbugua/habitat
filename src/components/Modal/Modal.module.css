@@ -1,0 +1,47 @@
+@import "/src/styles/theme.css";
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(120, 90, 160, 0.48);
+  backdrop-filter: blur(4px);
+}
+
+.modal {
+  position: relative;
+  box-sizing: border-box; /* padding/border no longer add to declared width, preventing overflow */
+  width: min(560px, 100%);
+  max-height: 90vh;
+  overflow-y: auto; /* FIX: scroll tall content instead of clipping it */
+  overflow-x: hidden;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  border-radius: 1.5rem;
+  box-shadow: 0 1.5rem 2.5rem var(--color-shadow);
+  padding: 1.25rem;
+  color: var(--color-text);
+}
+
+.closeButton {
+  position: absolute;
+  top: 1.9rem;
+  right: 2.9rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 50%;
+  background: rgba(139, 92, 246, 0.08);
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.closeButton:hover {
+  background: rgba(236, 72, 153, 0.08);
+}
