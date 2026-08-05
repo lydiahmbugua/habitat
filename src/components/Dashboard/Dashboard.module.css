@@ -1,0 +1,571 @@
+@import "/src/styles/theme.css";
+
+.page {
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.header,
+.cardGrid,
+.formCard,
+.emptyState {
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.addHabitButton {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 300;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.addHabitButton:hover {
+  transform: scale(1.08);
+}
+
+.addHabitButton:active {
+  transform: scale(0.95);
+}
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.header h1,
+.formHeader h2,
+.emptyState h2 {
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--color-text);
+}
+
+.header h1 {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+}
+
+.addButton,
+.primaryButton,
+.secondaryButton,
+.toggleButton,
+.closeButton {
+  border: none;
+  border-radius: 999px;
+  font: inherit;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.addButton,
+.primaryButton {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-accent) 100%
+  );
+  color: white;
+  font-weight: 700;
+  box-shadow: 0 0.75rem 1.5rem rgba(139, 92, 246, 0.25);
+}
+
+.addButton {
+  padding: 0.85rem 1.35rem;
+}
+
+.addButton:hover,
+.primaryButton:hover,
+.secondaryButton:hover,
+.toggleButton:hover,
+.closeButton:hover {
+  transform: translateY(-1px);
+}
+
+.formCard,
+.emptyState,
+.habitCard {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 0.5rem 1.2rem var(--color-shadow);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.formCard {
+  padding: 1.25rem;
+  border-radius: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.formHeader h2 {
+  font-size: 1.5rem;
+}
+
+.closeButton {
+  background: transparent;
+  color: var(--color-muted);
+  padding: 0.5rem 0.75rem;
+}
+
+.fieldRow {
+  display: grid;
+  gap: 1rem;
+}
+
+.fieldGroup {
+  display: grid;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.fieldGroup input,
+.fieldGroup textarea {
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.fieldGroup input:focus,
+.fieldGroup textarea:focus {
+  outline: 2px solid rgba(139, 92, 246, 0.2);
+  border-color: var(--color-primary);
+}
+
+.formActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  padding: 0.8rem 1.1rem;
+  font-weight: 700;
+}
+
+.secondaryButton {
+  background: var(--color-panel);
+  color: var(--color-text);
+}
+
+.cardGrid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.habitCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: 1.2rem;
+}
+
+.habitCardComplete {
+  border-color: color-mix(in srgb, var(--color-accent) 40%, transparent);
+  background: var(--color-surface);
+}
+
+.cardTopRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.habitDot {
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(-color-accent));
+  box-shadow: 0 0 0 0.3rem rgba(139, 92, 246, 0.12);
+}
+
+.streakBadge {
+  display: inline-block;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.12);
+  color: var(--color-primary);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.habitHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.habitCard h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+
+.progressStack {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.completeBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(236, 72, 153, 0.12);
+  color: var(--color-accent);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.progressRing {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--color-accent) 0deg,
+    var(--color-accent) var(--progress-angle, 0deg),
+    rgba(139, 92, 246, 0.12) var(--progress-angle, 0deg),
+    rgba(139, 92, 246, 0.12) 360deg
+  );
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.progressRingInner {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--color-surface);
+  display: grid;
+  place-items: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.progressMeta {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.progressBar {
+  width: 100%;
+  height: 0.7rem;
+  border-radius: 999px;
+  background: rgba(139, 92, 246, 0.12);
+  overflow: hidden;
+}
+
+.progressBar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+.cardActionRow {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.actionButtonSecondary,
+.actionButtonDanger {
+  width: 2.75rem;
+  height: 2.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.actionButtonSecondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.actionButtonDanger {
+  background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+  color: var(--color-accent);
+}
+
+.actionButtonSecondary:hover,
+.actionButtonDanger:hover {
+  transform: scale(1.08);
+}
+
+.actionButtonSecondary:hover {
+  background: var(--color-panel);
+}
+
+.actionButtonDanger:hover {
+  background: color-mix(in srgb, var(--color-accent) 25%, transparent);
+}
+
+.logRow {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.logRow input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 0.8rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.notesSection {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.addDetailsLink {
+  justify-self: start;
+  border: none;
+  background: transparent;
+  padding: 0;
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.addDetailsLink:hover {
+  text-decoration: underline;
+}
+
+.notesDisplay {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px dashed var(--color-border);
+  border-radius: 0.875rem;
+  background: var(--color-panel);
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+  font: inherit;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.notesDisplay span:first-child {
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.notesEditHint {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.notesInput {
+  width: 80%;
+  resize: vertical;
+  border: 1px solid var(--color-border);
+  border-radius: 0.875rem;
+  padding: 0.8rem 0.9rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0rem;
+}
+
+.notesInput:focus {
+  outline: 2px solid rgba(139, 92, 246, 0.2);
+  border-color: var(--color-primary);
+}
+
+.notesActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.notesActions .primaryButton,
+.notesActions .secondaryButton {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.completedState {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  background: rgba(236, 72, 153, 0.08);
+  color: var(--color-text);
+}
+
+.completedState strong {
+  font-size: 0.95rem;
+}
+
+.completedState span {
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 26rem) {
+  .progressStack {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  max-width: 620px;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+}
+
+.emptyState h2 {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.emptyState p {
+  margin: 0;
+  max-width: 28rem;
+  line-height: 1.7;
+  color: var(--color-muted);
+}
+
+.successState {
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+  min-height: 220px;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: 1.25rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--color-surface-strong) 90%, transparent),
+    color-mix(in srgb, var(--color-surface) 95%, transparent)
+  );
+  border: 1px solid var(--color-border);
+}
+
+.successFadeIn {
+  animation: fadeInSuccess 0.25s ease;
+}
+
+.successIcon {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-text));
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+@keyframes fadeInSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 48rem) {
+  .page {
+    padding-top: 3rem;
+  }
+
+  .fieldRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.formCard input {
+  width: 90%;
+}
+.goalMetRow {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 0.3rem;
+}
