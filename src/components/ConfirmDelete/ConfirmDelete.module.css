@@ -1,0 +1,75 @@
+.container {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+
+  margin: 0 auto 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+
+  font-size: 1.8rem;
+}
+
+.container h2 {
+  margin-bottom: 0.75rem;
+}
+
+.container p {
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.warning {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+.cancel,
+.delete {
+  min-width: 120px;
+  padding: 0.8rem 1.2rem;
+
+  border-radius: 999px;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.cancel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+}
+
+.cancel:hover {
+  background: var(--color-panel);
+}
+
+.delete {
+  background: var(--color-accent);
+  color: white;
+  border: none;
+}
+
+.delete:hover {
+  transform: translateY(-2px);
+}
