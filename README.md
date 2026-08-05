@@ -31,7 +31,7 @@ Habitat is a calm, minimalist habit tracker designed to help users build consist
 
 ### Dark Mode
 
-![Dark Mode](./screenshots/dark-mode.png)
+![Dark Mode](./screenshots/dark-mode.jpg)
 
 
 
