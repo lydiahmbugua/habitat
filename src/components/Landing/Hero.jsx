@@ -1,10 +1,6 @@
 import styles from "./Landing.module.css";
 
-function Hero() {
-  const handleClick = () => {
-    window.location.href = "/dashboard";
-  };
-
+function Hero({ onGetStarted }) {
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
@@ -17,9 +13,9 @@ function Hero() {
         <button
           type="button"
           className={styles.ctaButton}
-          onClick={handleClick}
+          onClick={onGetStarted}
         >
-          Open dashboard
+          Get Started
         </button>
       </div>
     </section>
