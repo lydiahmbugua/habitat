@@ -1,5 +1,6 @@
 # 🌱 Habitat
 
+
 🔗 **Live demo:** [https://yourhabitat.netlify.app](https://yourhabitat.netlify.app)
 
 Habitat is a calm, minimalist habit tracker designed to help users build consistent routines one day at a time. It focuses on simple progress tracking, thoughtful reflections, and a distraction-free interface with support for light and dark themes.
