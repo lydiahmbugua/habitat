@@ -31,7 +31,7 @@ function AppNav() {
 
           <button
             type="button"
-            className={styles.primaryButton}
+            className={styles.themeButton}
             onClick={handleLogout}
           >
             <svg
