@@ -1,5 +1,7 @@
 # 🌱 Habitat
 
+🔗 **Live demo:** [https://yourhabitat.netlify.app](https://yourhabitat.netlify.app)
+
 Habitat is a calm, minimalist habit tracker designed to help users build consistent routines one day at a time. It focuses on simple progress tracking, thoughtful reflections, and a distraction-free interface with support for light and dark themes.
 
 ## ✨ Features
@@ -20,6 +22,7 @@ Habitat is a calm, minimalist habit tracker designed to help users build consist
 ---
 
 ## 📸 Screenshots
+
 ### Landing Page
 
 ![Landing Page](./screenshots/landing-page.png)
@@ -31,8 +34,6 @@ Habitat is a calm, minimalist habit tracker designed to help users build consist
 ### Dark Mode
 
 ![Dark Mode](./screenshots/dark-mode.jpg)
-
-
 
 ---
 
@@ -124,24 +125,24 @@ Habitat uses two primary tables:
 
 ### habits
 
-| Column | Type |
-|---------|------|
-| id | uuid |
-| user_id | uuid |
-| name | text |
-| unit | text |
-| target | numeric |
+| Column     | Type        |
+| ---------- | ----------- |
+| id         | uuid        |
+| user_id    | uuid        |
+| name       | text        |
+| unit       | text        |
+| target     | numeric     |
 | created_at | timestamptz |
 
 ### habit_logs
 
-| Column | Type |
-|---------|------|
-| id | uuid |
-| habit_id | uuid |
-| date | date |
-| amount | numeric |
-| note | text |
+| Column   | Type    |
+| -------- | ------- |
+| id       | uuid    |
+| habit_id | uuid    |
+| date     | date    |
+| amount   | numeric |
+| note     | text    |
 
 Both tables are protected using Supabase Row Level Security so users can only access their own data.
 
@@ -164,7 +165,6 @@ The interface uses soft colors, rounded components, and subtle animations to cre
 
 ## 🔮 Future Improvements
 
-
 - Habit categories
 - Weekly and monthly analytics
 - Habit reminders
@@ -182,7 +182,7 @@ The interface uses soft colors, rounded components, and subtle animations to cre
 
 GitHub: https://github.com/lydiahmbugua
 
-LinkedIn: *(Add your LinkedIn URL here)*
+LinkedIn: _(Add your LinkedIn URL here)_
 
 ---
 
