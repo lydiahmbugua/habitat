@@ -103,15 +103,17 @@ function Dashboard() {
             <h1>Habit Dashboard</h1>
           </div>
 
-          <button
-            type="button"
-            className={styles.addHabitButton}
-            onClick={() => setIsAddHabitModalOpen(true)}
-            aria-label="Add habit"
-            title="Add habit"
-          >
-            +
-          </button>
+          {habits.length > 0 && (
+            <button
+              type="button"
+              className={styles.addHabitButton}
+              onClick={() => setIsAddHabitModalOpen(true)}
+              aria-label="Add habit"
+              title="Add habit"
+            >
+              +
+            </button>
+          )}
         </header>
 
         <Modal
