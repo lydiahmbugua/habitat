@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/useAuth";
 import { supabase } from "../../lib/supabaseClient";
 import styles from "./Settings.module.css";
@@ -7,14 +8,27 @@ import { useTheme } from "../../context/useTheme";
 
 export default function Settings() {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
 
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [signingOut, setSigningOut] = useState(false);
 
   const { theme, setTheme } = useTheme();
+
+  async function handleSignOut() {
+    setSigningOut(true);
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+      setMessage(error.message);
+      setSigningOut(false);
+      return;
+    }
+    navigate("/");
+  }
 
   async function handlePasswordUpdate(e) {
     e.preventDefault();
@@ -59,6 +73,15 @@ export default function Settings() {
           <label className={styles.label}>Email</label>
 
           <input value={user?.email ?? ""} disabled className={styles.input} />
+
+          <button
+            type="button"
+            onClick={handleSignOut}
+            disabled={signingOut}
+            className={styles.signOutButton}
+          >
+            {signingOut ? "Signing out..." : "Sign out"}
+          </button>
         </section>
         <section className={styles.card}>
           <h2>Appearance</h2>
