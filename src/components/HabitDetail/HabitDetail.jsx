@@ -7,6 +7,7 @@ import calculateStreak from "../../utils/calculateStreak.js";
 import HabitProgressChart from "./HabitProgressChart.jsx";
 import TimeRangeSelector from "./TimeRangeSelector.jsx";
 import styles from "./HabitDetail.module.css";
+import { parseLocalDate } from "../../utils/dateKey.js";
 
 function HabitDetail() {
   const { habitId } = useParams();
@@ -44,7 +45,7 @@ function HabitDetail() {
   cutoffDate.setDate(today.getDate() - (rangeDays[selectedRange] ?? 7));
 
   const logsInRange = (habit.logs ?? []).filter((entry) => {
-    const entryDate = new Date(entry.date);
+    const entryDate = parseLocalDate(entry.date); // FIX: was `new Date(entry.date)`
     return entryDate >= cutoffDate && entryDate <= today;
   });
 
