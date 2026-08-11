@@ -6,7 +6,6 @@ import styles from "./Landing.module.css";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../../context/useAuth";
 import { useState } from "react";
-import Modal from "../Modal/Modal";
 import AuthForm from "../Auth/AuthForm";
 
 const GITHUB_URL = "https://github.com/lydiahmbugua/habitat";
@@ -76,9 +75,9 @@ function Landing() {
           <span>Build calm momentum, one habit at a time.</span>
         </footer>
       </main>
-      <Modal isOpen={authModal.isOpen} onClose={closeModal}>
-        <AuthForm initialMode={authModal.mode} />
-      </Modal>
+      {authModal.isOpen && (
+        <AuthForm initialMode={authModal.mode} onClose={closeModal} />
+      )}
     </>
   );
 }
