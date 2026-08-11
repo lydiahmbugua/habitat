@@ -8,7 +8,8 @@ import { useAuth } from "../../context/useAuth";
 import { useState } from "react";
 import AuthForm from "../Auth/AuthForm";
 
-const GITHUB_URL = "https://github.com/lydiahmbugua/habitat";
+const GITHUB_URL = "https://github.com/lydiahmbugua";
+const HABITAT_GITHUB_URL = "https://github.com/lydiahmbugua/habitat";
 
 function Landing() {
   const { user, isLoading } = useAuth();
@@ -48,7 +49,7 @@ function Landing() {
         <Hero onGetStarted={openSignup} /> <Features />
         <HowItWorks />
         <footer className={styles.footer}>
-          <a href={GITHUB_URL} target="_blank" rel="noreferrer">
+          <a href={HABITAT_GITHUB_URL} target="_blank" rel="noreferrer">
             <svg
               viewBox="0 0 16 16"
               width="24"
