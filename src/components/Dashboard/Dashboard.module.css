@@ -225,7 +225,11 @@
   width: 0.9rem;
   height: 0.9rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-primary), var(-color-accent));
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-accent)
+  );
   box-shadow: 0 0 0 0.3rem rgba(139, 92, 246, 0.12);
 }
 
