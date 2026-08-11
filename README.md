@@ -14,13 +14,12 @@ Habitat is a calm, minimalist habit tracker designed to help users build consist
 - ⚙️ Account settings with password update
 - 🗑️ Confirmation modal before deleting habits
 - 📱 Responsive design for desktop and mobile
+- 📧 Email verification
+- 💬 Password reset
 
 ---
 
 ## 📸 Screenshots
-
-> Add screenshots here once you're ready.
-
 ### Landing Page
 
 ![Landing Page](./screenshots/landing-page.png)
@@ -165,8 +164,7 @@ The interface uses soft colors, rounded components, and subtle animations to cre
 
 ## 🔮 Future Improvements
 
-- Email verification
-- Password reset
+
 - Habit categories
 - Weekly and monthly analytics
 - Habit reminders
