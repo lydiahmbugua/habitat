@@ -109,7 +109,7 @@ function NewHabitForm({ initialHabit, onSave, onClose, onSuccess }) {
         <div className={styles.successIcon} aria-hidden="true">
           ✓
         </div>
-        {/* ADD: message reflects which action actually happened */}
+
         <h2>{isEditMode ? "Habit updated!" : "Habit added!"}</h2>
       </div>
     );
@@ -124,7 +124,6 @@ function NewHabitForm({ initialHabit, onSave, onClose, onSuccess }) {
           </p>
           <h2>{isEditMode ? "Update your ritual" : "Add a ritual"}</h2>
         </div>
-        {/* FIX: removed duplicate close button here — Modal owns closing */}
       </div>
 
       <label className={styles.fieldGroup}>

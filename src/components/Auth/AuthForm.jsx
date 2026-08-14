@@ -3,7 +3,7 @@ import { supabase } from "../../lib/supabaseClient.js";
 import { useNavigate } from "react-router-dom";
 import styles from "./AuthForm.module.css";
 
-function AuthForm({ initialMode = "login" }) {
+function AuthForm({ initialMode = "login", onClose }) {
   const [mode, setMode] = useState(initialMode); // "login" | "signup"
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,48 +49,67 @@ function AuthForm({ initialMode = "login" }) {
   };
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <h2 className={styles.heading}>
-        {mode === "signup" ? "Sign Up" : "Log In"}
-      </h2>
-      <p className={styles.subheading}>
-        {mode === "signup"
-          ? "Create an account to start tracking your habits."
-          : "Log in to access your habit tracker."}
-      </p>
-      <input
-        className={styles.input}
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-      />
-      <input
-        className={styles.input}
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        minLength={6}
-        required
-      />
-      {error ? <p role="alert">{error}</p> : null}
-      {infoMessage ? <p>{infoMessage}</p> : null}
-      <button className={styles.primaryButton} type="submit">
-        {mode === "signup" ? "Sign up" : "Log in"}
-      </button>
-      <p className={styles.authSwitch}>
-        {mode === "signup" ? "Already have an account? " : "New here? "}
+    <div className={styles.overlay} onClick={onClose}>
+      <form
+        className={styles.form}
+        onSubmit={handleSubmit}
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           type="button"
-          className={styles.authLink}
-          onClick={() => setMode(mode === "signup" ? "login" : "signup")}
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label="Close"
         >
-          {mode === "signup" ? "Log in" : "Sign up"}
+          &times;
         </button>
-      </p>
-    </form>
+
+        <h2 className={styles.heading}>
+          {mode === "signup" ? "Sign Up" : "Log In"}
+        </h2>
+        <p className={styles.subheading}>
+          {mode === "signup"
+            ? "Create an account to start tracking your habits."
+            : "Log in to access your habit tracker."}
+        </p>
+        <input
+          className={styles.input}
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+        />
+        <input
+          className={styles.input}
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          minLength={6}
+          required
+        />
+        {error ? (
+          <p role="alert" className={styles.error}>
+            {error}
+          </p>
+        ) : null}
+        {infoMessage ? <p className={styles.info}>{infoMessage}</p> : null}
+        <button className={styles.primaryButton} type="submit">
+          {mode === "signup" ? "Sign up" : "Log in"}
+        </button>
+        <p className={styles.authSwitch}>
+          {mode === "signup" ? "Already have an account? " : "New here? "}
+          <button
+            type="button"
+            className={styles.authLink}
+            onClick={() => setMode(mode === "signup" ? "login" : "signup")}
+          >
+            {mode === "signup" ? "Log in" : "Sign up"}
+          </button>
+        </p>
+      </form>
+    </div>
   );
 }
 

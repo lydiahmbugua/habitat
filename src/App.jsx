@@ -1,9 +1,9 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"; // FIX: removed unused Navigate import
-import Landing from "./components/Landing/Landing.jsx"; // ADD
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Landing from "./components/Landing/Landing.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
 import HabitDetail from "./components/HabitDetail/HabitDetail.jsx";
 import "./App.css";
-import ProtectedRoute from "./components/Auth/ProtectedRoute.jsx"; // ADD
+import ProtectedRoute from "./components/Auth/ProtectedRoute.jsx";
 import Settings from "./components/Settings/Settings.jsx";
 
 function App() {
